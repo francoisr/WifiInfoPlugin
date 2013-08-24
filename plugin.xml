@@ -14,7 +14,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <!-- android -->
     <platform name="android">
 
-        <js-module src="www/WifiInfoPlugin.js" name="WifiInfo">
+      <source-file src="www/js/dump.js" target-dir="js"/>
+      
+      <js-module src="www/WifiInfoPlugin.js" name="WifiInfo">
           <clobbers target="WifiInfo" />
         </js-module>
   
