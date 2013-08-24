@@ -49,7 +49,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
           <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
 
-      <source-file src="src/android/WifiInfoPlugin.java" target-dir="src/riologica/wifiinfo" />
+      <source-file src="src/android/WifiInfoPlugin.java" target-dir="src/net/riologica/wifiinfo" />
       <source-file src="src/android/GeoBroker.java" target-dir="src/org/apache/cordova/geolocation" />
       <source-file src="src/android/GPSListener.java" target-dir="src/org/apache/cordova/geolocation" />
         <source-file src="src/android/NetworkListener.java" target-dir="src/org/apache/cordova/geolocation" />
