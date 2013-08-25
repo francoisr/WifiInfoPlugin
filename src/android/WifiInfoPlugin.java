@@ -1,4 +1,4 @@
-package org.apache.cordova.plugin;
+package net.riologica.wifiinfo;
 
 
 import org.apache.cordova.api.CallbackContext;
