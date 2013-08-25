@@ -68,14 +68,7 @@ function createTimeout(errorCallback, timeout) {
 }
 
 var geolocation = {
-    lastPosition:null, // reference to last known (cached) position returned
-    
-   getWifiInfo:function(successCallback, errorCallback, options) {
-        alert('getWifiInfo calling : exec(success, fail, "WifiInfoPlugin", null, [] );')
-		exec(success, fail, 'WifiInfoPlugin', null, [] );
-	    alert('getWifiInfo called : exec(success, fail, ·WifiInfoPlugin", null, [] );')
-    },
-    
+    lastPosition:null, // reference to last known (cached) position returned    
     /**
    * Asynchronously acquires the current position.
    *
