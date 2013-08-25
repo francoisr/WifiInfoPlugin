@@ -104,7 +104,7 @@ var wifiinfo = {
                 },
                 (p.timestamp === undefined ? new Date() : ((p.timestamp instanceof Date) ? p.timestamp : new Date(p.timestamp)))
             );
-            geolocation.lastPosition = pos;
+            wifiinfo.lastPosition = pos;
             successCallback(pos);
         };
         var fail = function(e) {
@@ -118,8 +118,8 @@ var wifiinfo = {
 
         // Check our cached position, if its timestamp difference with current time is less than the maximumAge, then just
         // fire the success callback with the cached position.
-        if (geolocation.lastPosition && options.maximumAge && (((new Date()).getTime() - geolocation.lastPosition.timestamp.getTime()) <= options.maximumAge)) {
-            successCallback(geolocation.lastPosition);
+        if (wifiinfo.lastPosition && options.maximumAge && (((new Date()).getTime() - wifiinfo.lastPosition.timestamp.getTime()) <= options.maximumAge)) {
+            successCallback(wifiinfo.lastPosition);
         // If the cached position check failed and the timeout was set to 0, error out with a TIMEOUT error object.
         } else if (options.timeout === 0) {
             fail({
@@ -159,7 +159,7 @@ var wifiinfo = {
         var id = utils.createUUID();
 
         // Tell device to get a position ASAP, and also retrieve a reference to the timeout timer generated in getCurrentPosition
-        timers[id] = geolocation.getCurrentPosition(successCallback, errorCallback, options);
+        timers[id] = wifiinfo.getCurrentPosition(successCallback, errorCallback, options);
 
         var fail = function(e) {
             clearTimeout(timers[id].timer);
@@ -186,7 +186,7 @@ var wifiinfo = {
                 },
                 (p.timestamp === undefined ? new Date() : ((p.timestamp instanceof Date) ? p.timestamp : new Date(p.timestamp)))
             );
-            geolocation.lastPosition = pos;
+            wifiinfo.lastPosition = pos;
             successCallback(pos);
         };
 
