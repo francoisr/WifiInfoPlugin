@@ -69,6 +69,11 @@ function createTimeout(errorCallback, timeout) {
 
 var geolocation = {
     lastPosition:null, // reference to last known (cached) position returned
+    
+   getWifiInfo:function(successCallback, errorCallback, options) {
+        alert('getWifiInfo:function(successCallback, errorCallback, options)');
+    },
+    
     /**
    * Asynchronously acquires the current position.
    *
