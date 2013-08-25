@@ -71,7 +71,9 @@ var geolocation = {
     lastPosition:null, // reference to last known (cached) position returned
     
    getWifiInfo:function(successCallback, errorCallback, options) {
-        alert('getWifiInfo:function(successCallback, errorCallback, options)');
+        alert('getWifiInfo calling : exec(success, fail, "WifiInfoPlugin", null, [] );')
+		exec(success, fail, 'WifiInfoPlugin', null, [] );
+	    alert('getWifiInfo called : exec(success, fail, ·WifiInfoPlugin", null, [] );')
     },
     
     /**
