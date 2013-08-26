@@ -1,4 +1,4 @@
-package net.riologica.wifiinfo;
+package org.apache.cordova.plugin;
 
 
 import org.apache.cordova.api.CallbackContext;
@@ -15,12 +15,14 @@ import android.net.wifi.WifiManager;
 
 public class WifiInfoPlugin extends CordovaPlugin { 
 
+	@Override 
 	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 		
 		Context context = cordova.getActivity().getApplicationContext();
 		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-			
+		
+		
 		JSONObject obj = new JSONObject();
 		try {
 			JSONObject activity = new JSONObject();

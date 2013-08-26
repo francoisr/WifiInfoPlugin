@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:rim="http://www.blackberry.com/ns/widgets"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="net.riologica.wifiinfo"
-      version="0.3.2">
+      version="0.3.1">
 
     <name>WifiInfo</name>
     <description>WifiInfo Plugin</description>
     <license>MIT</license>
     <keywords>wifi, wireless</keywords>
-  
-  <!-- android -->
+
+    <!-- android -->
     <platform name="android">
 
-        <js-module src="www/WifiInfoPlugin.js" name="wifiinfo">
-          <clobbers target="navigator.wifiinfo" />
+        <js-module src="www/WifiInfoPlugin.js" name="WifiInfo">
+          <clobbers target="WifiInfo" />
         </js-module>
 
         <js-module src="www/Coordinates.js" name="Coordinates">
@@ -48,9 +49,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
           <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
 
-        <source-file src="src/android/WifiInfoPlugin.java" target-dir="src/net/riologica/wifiinfo" />
-        
-        <source-file src="src/android/GeoBroker.java" target-dir="src/org/apache/cordova/geolocation" />
+      <source-file src="src/android/WifiInfoPlugin.java" target-dir="src/net/riologica/wifiinfo" />
+      
+      <source-file src="src/android/GeoBroker.java" target-dir="src/org/apache/cordova/geolocation" />
         <source-file src="src/android/GPSListener.java" target-dir="src/org/apache/cordova/geolocation" />
         <source-file src="src/android/NetworkListener.java" target-dir="src/org/apache/cordova/geolocation" />
         <source-file src="src/android/CordovaLocationListener.java" target-dir="src/org/apache/cordova/geolocation" />
