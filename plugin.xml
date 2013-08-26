@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:rim="http://www.blackberry.com/ns/widgets"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="net.riologica.wifiinfo"
       version="0.3.2">
@@ -10,12 +9,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <description>WifiInfo Plugin</description>
     <license>MIT</license>
     <keywords>wifi, wireless</keywords>
+  
+    <asset src="www/js/dump.js" target-dir="dump.js" />
 
-    <!-- android -->
+  <!-- android -->
     <platform name="android">
 
         <js-module src="www/WifiInfoPlugin.js" name="WifiInfo">
-          <clobbers target="WifiInfo" />
+          <clobbers target="navigator.wifiinfo" />
         </js-module>
 
         <js-module src="www/Coordinates.js" name="Coordinates">
