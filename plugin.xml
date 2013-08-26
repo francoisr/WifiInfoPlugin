@@ -10,8 +10,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <license>MIT</license>
     <keywords>wifi, wireless</keywords>
   
-    <asset src="www/js/dump.js" target="dump.js" />
-
   <!-- android -->
     <platform name="android">
 
