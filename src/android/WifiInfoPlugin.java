@@ -13,7 +13,11 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
+import java.util.logging.Logger;
+
 public class WifiInfoPlugin extends CordovaPlugin { 
+
+private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
 
 	@Override 
 	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
@@ -22,7 +26,8 @@ public class WifiInfoPlugin extends CordovaPlugin {
 		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 		
-		
+		Log.d("MyTag", "Debug message");		
+
 		JSONObject obj = new JSONObject();
 		try {
 			JSONObject activity = new JSONObject();
