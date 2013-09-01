@@ -9,7 +9,7 @@ var wifiinfo = {
     getWifiInfo:function(success, fail) {
         alert('calling : exec(success, fail, "WifiInfoPlugin", null, [] );')
 		exec(success, fail, 'WifiInfoPlugin', null, [] );
-	    alert('called : exec(success, fail, ·WifiInfoPlugin", null, [] );')
+	    alert('called : exec(success, fail, "WifiInfoPlugin", null, [] );')
 		}
 	};
 
