@@ -5,7 +5,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
            id="org.apache.cordova.plugin.wifiinfo"
       version="0.3.2">
 
-    <name>WifiInfo</name>
+    <name>WifiInfoPlugin</name>
     <description>WifiInfo Plugin</description>
     <license>MIT</license>
     <keywords>wifi, wireless</keywords>
@@ -18,7 +18,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </js-module>
 
       <config-file target="res/xml/config.xml" parent="/*">
-          <feature name="WifiInfo">
+          <feature name="WifiInfoPlugin">
             <param name="android-package" value="org.apache.cordova.plugin.WifiInfoPlugin"/>
           </feature>
         </config-file>
