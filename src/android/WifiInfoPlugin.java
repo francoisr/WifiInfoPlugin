@@ -13,21 +13,25 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-import java.util.logging.Logger;
-
 public class WifiInfoPlugin extends CordovaPlugin { 
-
-private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
 
 	@Override 
 	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 		
 		Context context = cordova.getActivity().getApplicationContext();
 		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-		
-		Log.d("MyTag", "Debug message");		
 
+//  FR Leave this for later.  Assume Android keeps doing auto startScan, for now.
+//		wifiManager.startScan();
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+
+		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+				
 		JSONObject obj = new JSONObject();
 		try {
 			JSONObject activity = new JSONObject();
@@ -48,7 +52,10 @@ private final static Logger LOGGER = Logger.getLogger(MyClass.class.getName());
 	        	ap.put("SSID", scanResult.SSID);
 	        	ap.put("frequency", scanResult.frequency);
 	        	ap.put("level", scanResult.level);
-	        	//netwrok.put("timestamp", String.valueOf(scanResult.timestamp));
+	        	double s = WifiManager.calculateSignalLevel(scanResult.level, 40)*2.5;
+	        	if (s<0){s=0;} ;
+	        	if (s>100) {s=100;};
+		        ap.put("strength", s);	        		
 	        	ap.put("capabilities", scanResult.capabilities);
 	        	available.put(ap);
 	        }

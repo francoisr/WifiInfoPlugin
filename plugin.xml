@@ -25,6 +25,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <config-file target="AndroidManifest.xml" parent="/*">
           <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+          <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
         </config-file>
 
       <source-file src="src/android/WifiInfoPlugin.java" target-dir="src/org/apache/cordova/plugin" />
