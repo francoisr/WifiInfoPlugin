@@ -1,4 +1,3 @@
-cordova.define("org.apache.cordova.plugin.wifiinfo.WifiInfo", function(require, exports, module) {
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec');
@@ -23,4 +22,3 @@ var wifiinfo = {
 	};
 
 module.exports = wifiinfo;
-});
